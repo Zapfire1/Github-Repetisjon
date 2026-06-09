@@ -11,7 +11,6 @@ def Overwatch_characters_info():
     data = response.json()
     
     return render_template('index.html', 
-        name=data[0].get("name"),
-        portrait=data[0].get("portrait"))
+        heroes=data)
 
 app.run(debug=True)

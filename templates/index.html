@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-   <p>{{ name }}</p>
-    <img src="{{ portrait }}">
+    <div class="container">
+        {% for hero in heroes %}
+        <div class="content">
+            <p>{{ hero.name }}</p>
+            <img src="{{ hero.portrait }}">
+            <p>{{ hero.role.capitalize() }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
