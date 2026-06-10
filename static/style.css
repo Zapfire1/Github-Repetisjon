@@ -2,12 +2,33 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: aliceblue;
+    padding: 50px;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+    justify-content: space-evenly;
+}
+
+.hero-card {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-align: inherit;
+}
+
+.hero-card:focus-visible {
+    outline: 3px solid #4a90e2;
+    outline-offset: 4px;
+}
+
+.hero-card:hover .content {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .content {
@@ -18,4 +39,13 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 12px;
+    border: 2px solid black;
 }
