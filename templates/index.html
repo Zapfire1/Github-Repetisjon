@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         {% for hero in heroes %}
-        <button class="hero-card" type="button" data-hero="{{ hero.name }}">
+        <a href="herodata.html" class="hero-card" type="button" data-hero="{{ hero.name }}">
             <div class="content">
                 <p>{{ hero.name }}</p>
                 <img src="{{ hero.portrait }}" alt="{{ hero.name }} portrait">
                 <p>{{ hero.role.capitalize() }}</p>
             </div>
-        </button>
+        </a>
         {% endfor %}
     </div>
 </body>

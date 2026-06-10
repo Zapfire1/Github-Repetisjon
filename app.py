@@ -13,8 +13,14 @@ def Overwatch_characters_info():
     return render_template('index.html', 
         heroes=data)
 
-@app.route('/')
+@app.route('/herodata.html')
 def Overwatch_characters_data():
     url = "https://overfast-api.tekrop.fr/heroes/{{ hero.name }}"
+
+    response = requests.get(url)
+    data = response.json()
     
+    return render_template('herodata.html',
+        heroes=data)
+
 app.run(debug=True)
