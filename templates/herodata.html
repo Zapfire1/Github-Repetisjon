@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <div class="container">
-    <p>{{ hazard.description }}</p>
-    </div>
+    <a href="/">← Back to list</a>
+    {% if hero %}
+        <h1>{{ hero.name }}</h1>
+        {% if hero.portrait %}
+            <img src="{{ hero.portrait }}" alt="{{ hero.name }} portrait">
+        {% endif %}
+        <p>Role: {{ hero.role }}</p>
+    {% else %}
+        <p>No hero data available for '{{ hero_key }}'</p>
+    {% endif %}
 </body>
 </html>
